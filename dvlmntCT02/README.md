@@ -7,4 +7,5 @@ email
 description
 skills
 photo
+resume
 submit
