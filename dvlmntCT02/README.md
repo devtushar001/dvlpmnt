@@ -1,0 +1,10 @@
+Name
+dob
+fathername
+mobilenumber
+gender
+email
+description
+skills
+photo
+submit
