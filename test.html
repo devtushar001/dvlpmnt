@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Camera</title>
+  <style>
+    #video {
+      width: 100%;
+      height: auto;
+      border: 1px solid black;
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Open Camera Example</h1>
+
+  <!-- Video element to display webcam feed -->
+  <video id="video" autoplay></video>
+  
+  <!-- Button to start the camera -->
+  <button onclick="startCamera()">Start Camera</button>
+
+  <script>
+    function startCamera() {
+      // Access user's webcam using getUserMedia
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+          // If camera access is granted, display the stream in the video element
+          document.getElementById('video').srcObject = stream;
+        })
+        .catch(function(error) {
+          // If camera access is denied or an error occurs
+          console.error("Error accessing the camera: ", error);
+          alert("Error accessing the camera: " + error.message);
+        });
+    }
+  </script>
+
+</body>
+</html>
