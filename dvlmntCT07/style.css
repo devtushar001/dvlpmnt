@@ -1,0 +1,22 @@
+body {
+  height: 100vh;
+  text-align: center;
+  align-content: center;
+  background-color: black;
+}
+
+button {
+  width: 90px;
+  height: 30px;
+  background-color:  white;
+  border-radius: 13px;
+  border: none;
+}
+
+button:hover {
+  background-color: red;
+}
+
+button:active {
+  background-color: blue;
+}

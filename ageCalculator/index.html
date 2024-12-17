@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <style>
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calander {
+      padding: 40px 50px;
+      background-color: #e4e4e4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="calander">
+      <input type="date" id="get-date">
+      <button onclick="getAge()">Check</button>
+      <p>You are <span id="num">0 </span>years old</p>
+    </div>
+  </div>
+  <script>
+    function getAge() {
+      const dob = document.getElementById('get-date').value;
+      console.log(dob)
+      let date = new Date();
+
+      // Get the year, month, and day
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1; // Months are 0-based, so add 1
+      let day = date.getDate();
+
+      // Format the date as 'YYYY-MM-DD'
+      let formattedDate = year + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day);
+      const resultData = formattedDate - dob;
+
+      console.log(formattedDate);
+      console.log(resultData)
+      document.getElementById('num').innerHTML = dob;
+    }
+  </script>
+</body>
+
+</html>

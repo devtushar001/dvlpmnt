@@ -1,0 +1,88 @@
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <!-- <h2>Click Me Button</h2>
+     <button onclick="clickme()">Click Me</button>
+     <p id="click"></p> -->
+
+  <!-- <input id="numOne" type="number" placeholder="Enter first number"> <br><br>
+     <input id="numTwo" type="number" placeholder="Enter second number"><br><hr>
+     <button onclick="add()">Add</button>
+     <p>Sum of two values : <span id="sum"></span></p> -->
+
+
+  <input type="text" id="num1"><br><br>
+  <input type="text" id="num2"><br>
+  <hr>
+  <button id="add" onclick="add()">+</button>
+  <button id="substract" onclick="substract()">-</button>
+  <button id="multiply" onclick="multiply()">x</button>
+  <button id="devide" onclick="devide()">/</button>
+  <p id="output"></p>
+  <script>
+
+    // const output = document.getElementById('output');
+
+    function add() {
+      let a = parseInt(document.getElementById('num1').value);
+      let b = parseInt(document.getElementById('num2').value);
+      const sum = a + b;
+      alert(sum)
+      output.innerHTML = "You got sum"
+    }
+
+    function substract() {
+      let a = parseInt(document.getElementById('num1').value);
+      let b = parseInt(document.getElementById('num2').value);
+      const substract = a - b;
+      alert(substract)
+      output.innerHTML = "You got substraction"
+    }
+
+    function devide() {
+      let a = parseInt(document.getElementById('num1').value);
+      let b = parseInt(document.getElementById('num2').value);
+      const devide = a / b;
+      alert(devide)
+      output.innerHTML = "You got devide"
+    }
+
+    function multiply() {
+      let a = parseInt(document.getElementById('num1').value);
+      let b = parseInt(document.getElementById('num2').value);
+      const multiply = a * b;
+      alert(multiply)
+      output.innerHTML = "You got multiply"
+    }
+
+
+
+    // function add() {
+    //   const a = parseInt(document.getElementById('numOne').value);
+    //   const b = parseInt(document.getElementById('numTwo').value);
+
+    //   const sum = a + b;
+
+    //   document.getElementById('sum').innerHTML = sum;
+
+    //   document.getElementById('numOne').value = '';
+    //   document.getElementById('numTwo').value = '';
+    // }
+    //  function clickme(x = "Any body") {
+    //     document.getElementById('click').innerHTML = `${x} Clicked You`;
+    //  }
+
+    // function clickme() {
+    // const date = new Date()
+    // console.log(date.getHours)
+    // alert(Date());
+    //   document.getElementById('click').innerHTML = 'Allready Checked';
+    // }
+  </script>
+</body>
+
+</html>

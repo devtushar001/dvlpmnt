@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title>Prime Number Finder</title>
+</head>
+
+<body>
+  <h2>Prime No Finder</h2>
+  Input Number :
+  <input type="number" id="num"> <br>
+  <hr>
+  <button onclick="primeCheck()">Check Prime</button>
+
+  <script>
+    function primeCheck() {
+      let a = parseInt(document.getElementById("num").value);
+
+      // Check if the input is a valid number
+      if (isNaN(a)) {
+        alert("Please enter a valid number");
+        return;
+      }
+
+      let isPrime = true;
+
+      if (a <= 1) {
+        alert("Number is Not Prime");
+        return;
+      }
+
+      for (let i = 2; i <= Math.sqrt(a); i++) {  // Check divisibility only up to sqrt(a)
+        if (a % i == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+
+      if (isPrime) {
+        alert("Number is Prime");
+      } else {
+        alert("Number is Not Prime");
+      }
+    }
+  </script>
+</body>
+
+</html>

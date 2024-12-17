@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text code</title>
+</head>
+<body>
+   Input LowerRange : <input type="number" id="num1"> <br><br>
+   Input UpperRange : <input type="text" id="num2"> <br><hr>
+   <button onclick="checkprime()">Submit</button>
+   <p id="print">The Prime Number's are : </p>
+
+   <script>
+    function checkprime() {
+      let lr = Number(document.getElementById("num1").value);
+      let ur = Number(document.getElementById("num2").value);
+
+      for (i = lr; i <= ur; i++) {
+        let check = true;
+        for(j = 2; j < i; j++) {
+          if(i%j == 0) {
+            check = false;
+          }
+        }
+        if(check == true) {
+          document.getElementById("print").innerHTML += '<span>'+i+'</br></span>';
+          // alert(i)
+        }
+      }
+    }
+   </script>
+</body>
+</html>
