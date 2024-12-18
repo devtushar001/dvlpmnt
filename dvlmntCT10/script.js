@@ -1,8 +1,6 @@
 const randomNumber = Math.floor(Math.random() * 10);
 
-let count = 3;
-
-
+let count = 5;
 
 const guess = () => {
   count--;
@@ -19,6 +17,7 @@ const guess = () => {
     } else {
       alert("Guess the lower number");
     }
+    document.getElementById("number").value = "";
   }
   document.getElementById('count').innerHTML = count;
 }

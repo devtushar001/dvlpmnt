@@ -26,28 +26,33 @@
     <div class="calander">
       <input type="date" id="get-date">
       <button onclick="getAge()">Check</button>
-      <p>You are <span id="num">0 </span>years old</p>
+      <p id="showage">Your age : Counting</p>
     </div>
   </div>
   <script>
     function getAge() {
-      const dob = document.getElementById('get-date').value;
-      console.log(dob)
-      let date = new Date();
+      const dob = new Date(document.getElementById("get-date").value);
+      const presentDate = new Date();
 
-      // Get the year, month, and day
-      let year = date.getFullYear();
-      let month = date.getMonth() + 1; // Months are 0-based, so add 1
-      let day = date.getDate();
+      let years = presentDate.getFullYear() - dob.getFullYear();
+      let months = presentDate.getMonth() - dob.getMonth();
+      let days = presentDate.getDate() - dob.getDate();
 
-      // Format the date as 'YYYY-MM-DD'
-      let formattedDate = year + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day);
-      const resultData = formattedDate - dob;
+      // Adjust for negative months and days
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
 
-      console.log(formattedDate);
-      console.log(resultData)
-      document.getElementById('num').innerHTML = dob;
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(presentDate.getFullYear(), presentDate.getMonth(), 0); // Last day of the previous month
+        days += prevMonth.getDate(); // Get the number of days in the previous month
+      }
+
+      document.getElementById("showage").innerHTML = `You are ${years} years, ${months} months, and ${days} days old.`;
     }
+
   </script>
 </body>
 
