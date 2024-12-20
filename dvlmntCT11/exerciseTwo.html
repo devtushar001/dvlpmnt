@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chage Background</title>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body button {
+      padding: 7px 20px;
+      background-color: black;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="changeBackgroundColor()">Change Color</button>
+  <script>
+    const colors = ["red", "green", "blue", "yellow", "pink", "orange", "cyan", "aqua"]
+    let getCurrentColorIndex = 0;
+    function changeBackgroundColor() {
+        document.body.style.backgroundColor = colors[getCurrentColorIndex];
+        getCurrentColorIndex = (getCurrentColorIndex + 1) % colors.length;
+    }
+  </script>
+</body>
+</html>

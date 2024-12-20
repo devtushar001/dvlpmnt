@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container{
+            background-color: pink;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+
+        }
+        
+        .box{
+            background-color: white;
+            text-align: center;
+            padding: 20px 100px;
+            border-radius: 20px;
+        }
+        button{
+            background-color: pink;
+            padding: 5px 20px;
+            border-radius: 20px;
+        }
+        button:hover{
+            background-color: white;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>BODY MASS INDEX</h2>
+            <h4>BMI Calculator</h4>
+            <input type="number" placeholder="Enter Age"><br><br>
+            <input id = "height" type="number" placeholder="Enter Height(in cms)"><br><br>
+            <input id = "weight" type="number" placeholder="Enter your weight(in KG)"><br><br>
+            <button onclick="bmi()">Calculate</button>
+        </div>
+    </div>
+
+    <script>
+        function bmi(){
+            const a = parseFloat(document.getElementById("height").value);
+            const b = parseFloat(document.getElementById("weight").value);
+
+            const bmi = (b / (a*a));
+
+            if(bmi < 16){
+                alert("Severe Thinness");
+            }
+            else if(bmi >= 18.5 && bmi<=25){
+                alert("Normal");
+            }
+            else if(bmi > 26){
+                alert("overweight");
+            }
+            else{
+                alert("Obesity");
+            }
+
+        }
+    </script>
+
+</body>
+</html>

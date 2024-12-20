@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range of Prime</title>
+</head>
+
+<body>
+  Enter Lower Range : <input id="num1" type="number"><br><br>
+  Enter Upper Range : <input id="num2" type="number"><br><br>
+  <hr>
+  <button onclick="primeCheck()">Summit</button>
+  <p id="one"></p>
+
+  <script>
+    function primeCheck() {
+      let loR = parseInt(document.getElementById("num1").value);
+      let upR = parseInt(document.getElementById("num2").value);
+
+      let print;
+      for (let i = loR; i <= upR; i++) {
+        let check = true;
+
+        for (let j = 2; j < i; j++) {
+          if (i % j == 0) {
+            check = false;
+            break;
+          }
+
+        }
+        if (check == true) {
+          document.getElementById("one").innerHTML += ` ${i}</br>`
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble
+    </title>
+</head>
+<body>
+    <button onclick="on()">Turn ON Button</button>
+    <img src="../dvlmntCT12/offbulble.jpg" alt="gif"  height="200px" width="200px" id="myimage">
+    <button onclick="off()">Turn off Button</button>
+
+    <script>
+        const bulbElement = document.getElementById("myimage");
+function on(){
+bulbElement.src = "../dvlmntCT12/onbulble.jpg";
+}
+function off(){
+bulbElement.src = "../dvlmntCT12/offbulble.jpg";
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbie Calculator</title>
+  <style>
+    body,
+    html {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+    }
+
+    .container {
+
+      height: 100%;
+      background-color: pink;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      background-color: whitesmoke;
+      padding: 20px 50px;
+      border-radius: 30px;
+    }
+
+    button {
+      background-color: pink;
+      margin: 5px;
+      font-size: 25px;
+      padding: 18px;
+      border-radius: 15px;
+
+    }
+
+    input {
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">
+      <h2>Barbie Calculator :</h2>
+
+      <input type="number" placeholder="Enter your Number 1" id="num1"><br><br>
+      <input type="number" placeholder="Enter your Number 2" id="num2"><br><br>
+
+      <button onclick="sum()">+</button>
+      <button onclick="diff()">-</button>
+      <button onclick="muti()">*</button>
+      <button onclick="div()">/</button>
+      <button onclick="mod()">%</button>
+
+      <p id="print"></p>
+
+    </div>
+  </div>
+  <script>
+    function sum() {
+      let a = parseInt(document.getElementById("num1").value);
+      let b = parseInt(document.getElementById("num2").value);
+
+      let sum = a + b;
+      document.getElementById("print").innerHTML = "The sum is " + sum;
+
+    }
+    function diff() {
+      let a = parseInt(document.getElementById("num1").value);
+      let b = parseInt(document.getElementById("num2").value);
+
+      let diff = a - b;
+      document.getElementById("print").innerHTML = "The difference is " + diff;
+
+    }
+    function muti() {
+      let a = parseInt(document.getElementById("num1").value);
+      let b = parseInt(document.getElementById("num2").value);
+
+      let muti = a * b;
+      document.getElementById("print").innerHTML = "The multiply is " + muti;
+
+    }
+    function div() {
+      let a = parseInt(document.getElementById("num1").value);
+      let b = parseInt(document.getElementById("num2").value);
+
+      let div = a / b;
+      document.getElementById("print").innerHTML = "The division is " + div;
+
+    }
+    function mod() {
+
+      let a = parseInt(document.getElementById("num1").value);
+      let b = parseInt(document.getElementById("num2").value);
+
+      let mod = a % b;
+      document.getElementById("print").innerHTML = "The Modulus is " + mod;
+    }
+  </script>
+
+</body>
+
+</html>

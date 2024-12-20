@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Changer</title>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    body .container {
+      display: flex;
+      width: 540px;
+      background-color: aliceblue;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px 40px;
+    }
+
+    .div-para {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 540px;
+      height: 210px;
+    }
+
+    body .container .counter-btn {
+      width: 210px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        height: 25px;
+    }
+
+    body .container .counter-btn button {
+       border: none;
+       background-color: purple;
+       color: #fff;
+       cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="div-para">
+    <p id="para">Good Morning!</p>
+  </div>
+  <div class="container">
+    <div class="counter-btn">
+      <button onclick="counterDecrease()">-</button>
+      <button onclick="counterIncrease()">+</button>
+    </div>
+    <div class="display">
+      <p id="display"></p>
+    </div>
+     <script>
+      let counter = 0;
+      function counterDecrease() {
+        if (counter <= 0) {
+          return;
+        }
+        counter--;
+        document.getElementById("display").innerHTML = counter;
+        const para = document.getElementById('para');
+        para.style.fontSize = `${counter+18}px`;
+      }
+
+      function counterIncrease() {
+        counter++;
+        if(counter >= 45) {
+          return;
+        }
+        document.getElementById("display").innerHTML = counter;
+        const para = document.getElementById('para');
+        para.style.fontSize = `${counter+18}px`;
+      }
+     </script>
+  </div>
+</body>
+</html>

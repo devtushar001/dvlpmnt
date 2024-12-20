@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <link rel="stylesheet" href="counter.css">
+</head>
+
+<body>
+  <h2>Counter</h2>
+  <p id="print">0</p>
+  <button onclick="plus()">+</button>
+  <button onclick="minus()">-</button>
+  <br>
+  <hr>
+  <button onclick="reset()">Reset</button>
+
+  <script>
+    let counter = 0;
+    function plus() {
+      parseInt(document.getElementById("print").innerHTML = ++counter);
+    }
+    function minus() {
+      parseInt(document.getElementById("print").innerHTML = --counter);
+    }
+    function reset() {
+      counter = 0;
+      parseInt(document.getElementById("print").innerHTML = 0);
+    }
+  </script>
+</body>
+
+</html>

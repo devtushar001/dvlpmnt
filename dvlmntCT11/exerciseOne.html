@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greatest among three number</title>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    body .container {
+        background-color: aliceblue;
+        padding: 20px 30px;
+    }
+
+    body .container .inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      height: 25px;
+      border: none;
+    }
+
+    body .container .inputs input {
+      padding: 0px 10px;
+    }
+
+    body .container button {
+      border: none;
+      background-color: black;
+      color: #fff;
+      padding: 8px 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Second greatest among three numbers!!!</h1>
+    <p>Second Greatest number : <span id="show">0</span></p>
+    <div class="inputs">
+      <input type="number" name="" id="num1" class="num1" placeholder="Enter first number">
+      <input type="number" name="" id="num2" class="num2" placeholder="Enter second number">
+      <input type="number" name="" id="num3" class="num3" placeholder="Enter third number">
+    </div>
+    <br>
+    <br>
+    <div class="button">
+      <button onclick="check()">Check Second Greatest</button>
+    </div>
+  </div>
+
+  <script>
+    function check() {
+      let a = Number(document.getElementById("num1").value),
+        b = Number(document.getElementById("num2").value),
+        c = Number(document.getElementById("num3").value);
+      let sum = a + b + c;
+
+      let largest = Math.max(a, b, c);
+      let smallest = Math.min(a, b, c);
+
+      const secondLargest = sum - (smallest + largest);
+      document.getElementById("show").innerHTML = secondLargest;
+    }
+  </script>
+</body>
+
+</html>

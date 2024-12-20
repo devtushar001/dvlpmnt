@@ -1,0 +1,103 @@
+<html>
+
+<head>
+  <title>18-December-2024</title>
+</head>
+
+<body>
+
+  <script>
+    // function automorphic() {
+    //   let n = 76;
+    //   let m = n * n;
+
+    //   let rem1 = n % 10;
+    //   let rem2 = m % 10;
+
+    //   console.log(rem1);
+    //   console.log(rem2)
+
+    //   if (rem1 === rem2) {
+    //     console.log(true)
+    //   } else {
+    //     console.log(false)
+    //   }
+    // }
+    // automorphic()
+
+    // function harshadNumber() {
+    //   let num = 145;
+    //   let dummy = num;
+    //   let digit;
+    //   let digitSum = 0;
+
+    //   while (num != 0) {
+    //     // to get the last digit
+    //     let lastDigit = num % 10;
+    //     digitSum += lastDigit;
+    //     num = Math.floor(num / 10)
+    //   }
+
+    //   if (dummy % digitSum === 0) {
+    //     console.log("Harshad Number");
+    //   } else {
+    //     console.log("Number is not Harshad");
+    //   }
+    // }
+
+    // harshadNumber();
+    let num = 123456;
+    function rsum() {
+
+      let rsum = 0;
+      let digit = 0;
+      let numSave = num;
+
+      while (num != 0) {
+        let rem = num % 10;
+        digit++;
+        num = Math.floor(num / 10);
+      }
+
+      let halfDigit = Math.floor(digit / 2);
+
+      while (halfDigit != 0) {
+        let rem = numSave % 10;
+        rsum += rem;
+        numSave = Math.floor(numSave / 10);
+        halfDigit--;
+
+      }
+      return rsum;
+    }
+
+    function lsum() {
+      let num = 123456;
+      let rsum = 0;
+      let digit = 0;
+      let numSave = num;
+
+      while (num != 0) {
+        let rem = num % 10;
+        digit++;
+        num = Math.floor(num / 10);
+      }
+
+
+      while (digit != 0) {
+        let rem = numSave % 10;
+        rsum += rem;
+        numSave = Math.floor(numSave / 10);
+        digit--;
+
+      }
+      return rsum;
+    }
+   
+    console.log(rsum());
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Color</title>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: wheat;
+    }
+
+    body .input-container {
+      width: 320px;
+      display: grid;
+      grid-template-columns: 1fr 0.3fr;
+      height: 35px;
+    }
+
+    body .input-container button {
+      border: none;
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="input-container">
+    <input type="text" id="getcolor">
+    <button onclick="changeBackground()" id="color">Get Color</button>
+  </div>
+  <script>
+    function changeBackground() {
+      const color = document.getElementById("getcolor").value;
+      console.log(color)
+      // Call this function to actually change the background color
+      document.body.style.backgroundColor = color;
+    }
+
+    // const button = document.getElementById("color");
+    // button.addEventListener("click", (e) => {
+    //   console.log(e);
+    //   console.log("Hello World!");
+    // });
+
+    // document.addEventListener("click", (e)=> {
+    //   console.log(e)
+    // })
+
+  </script>
+</body>
+
+</html>

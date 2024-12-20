@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span>Input 1 : </span>
+    <input id="num1" type="number">
+    <br><br>
+    <span>Input 2 :</span>
+    <input  id="num2" type="number">
+    <br><hr>
+    <button onclick="swap()">Swap</button>
+
+    <script>
+        function swap(){
+            let a = parseInt(document.getElementById("num1").value);
+            let b = parseInt(document.getElementById("num2").value);
+
+            
+           let temp = a ;  
+            a = b;
+            b = temp;
+            document.getElementById("num1").value = a;
+            document.getElementById("num2").value = b ;
+        }
+    </script>
+</body>
+</html>
