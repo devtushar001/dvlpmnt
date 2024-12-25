@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+   body {
+     width: 100vw;
+     height: 100vh;
+     background-color: wheat;
+   }
+
+   .container {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+     display: flex;
+    gap: 10px;
+   }
+
+   .container button {
+      padding: 7px 20px;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+   }
+
+   #blue {
+    background-color: blue;
+   }
+
+   #green {
+    background-color: green;
+   }
+
+   #yellow {
+    background-color: yellow;
+   }
+
+   #black {
+    background-color: black;
+    color: #fff;
+   }
+
+   #darkred {
+    background-color: darkred;
+   }
+
+   #aqua {
+    background-color: aqua;
+   }
+
+   #reset {
+    background-color: coral;
+   }
+</style>
+<body>
+    <div class="container">
+      <button id="blue"  onclick="changeColor('blue')">Blue</button>
+      <button id="green" onclick="changeColor('green')"> Green</button>
+      <button id="yellow" onclick="changeColor('yellow')">Yellow</button>
+      <button id="black" onclick="changeColor('black')">Black</button>
+      <button id="darkred" onclick="changeColor('darkred')">Darkred</button>
+      <button id="aqua" onclick="changeColor('aqua')">Aqua</button>
+      <button id="reset" onclick="changeColor()">Reset</button>
+    </div>
+    <script>
+       function changeColor(color = "#fff") {
+            document.body.style.backgroundColor = color;
+       }
+    </script>
+</body>
+</html>

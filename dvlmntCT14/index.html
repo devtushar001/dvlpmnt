@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scan QR Code</title>
+  <style>
+    body {
+      width: 100vw;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+    }
+    .container {
+      padding: 40px;
+      width: 540px;
+      height: auto;
+      background-color: brown;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .container .box {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 0.3fr;
+      gap: 10px;
+      height: 25px;
+      margin-bottom: 30px;
+    }
+
+    .box input {
+      padding: 0 10px;
+    }
+
+    .box button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="color: #fff;">Generate QR Code</h2>
+    <div class="box">
+      <input id="input-text" type="text">
+      <button onclick="generateQr()">Generate QR</button>
+    </div>
+    <div class="img-qr">
+      <img src="" alt="" class="imgqr" id="imgqr">
+    </div>
+  </div>
+  <script>
+     let inputText = document.getElementById("input-text");
+     let imageQr = document.getElementById("imgqr")
+
+     function generateQr() {
+        imageQr.src = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+inputText.value;
+     }
+  </script>
+</body>
+</html>

@@ -14,10 +14,18 @@
       justify-content: center;
     }
 
+    P {
+      color: rgb(0, 71, 153);
+    }
+
+    .display p {
+      color: #fff;
+    }
+
     body .container {
       display: flex;
       width: 540px;
-      background-color: aliceblue;
+      background-color: rgb(0, 111, 209);
       align-items: center;
       justify-content: center;
       flex-direction: column;
@@ -30,19 +38,22 @@
       justify-content: center;
       width: 540px;
       height: 210px;
+      border: 1px solid rgb(0, 111, 209);
+      padding: 39px;
+      overflow: hidden;
     }
 
     body .container .counter-btn {
       width: 210px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 40px;
         height: 25px;
     }
 
     body .container .counter-btn button {
        border: none;
-       background-color: purple;
+       background-color: rgb(0, 0, 0);
        color: #fff;
        cursor: pointer;
     }
@@ -59,7 +70,7 @@
       <button onclick="counterIncrease()">+</button>
     </div>
     <div class="display">
-      <p id="display"></p>
+      <p id="display">0</p>
     </div>
      <script>
       let counter = 0;
@@ -75,7 +86,7 @@
 
       function counterIncrease() {
         counter++;
-        if(counter >= 45) {
+        if(counter >= 240) {
           return;
         }
         document.getElementById("display").innerHTML = counter;

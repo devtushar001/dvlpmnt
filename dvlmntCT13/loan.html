@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan</title>
+
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body .container {
+      background-color: rgb(113, 189, 254);
+      padding: 40px;
+      color: #fff;
+    }
+
+    body .container .loan-amount {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    body .container .loan-amount label {
+      margin-top: 30px;
+    }
+
+    #final-value {
+      margin-top: 30px;
+      padding: 7px 20px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .choose-plan {
+      margin-top: 30px;
+    }
+
+    .choose-plan button {
+
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="loan-amount">
+      <label for="">Loan amount INR</label>
+      <input id="amount" type="number">
+    </div>
+
+    <div class="loan-amount">
+      <label for="">Interest rate</label>
+      <input id="rate" type="number">
+    </div>
+
+    <div class="loan-amount">
+      <label for="">Months to pay</label>
+      <input id="time" type="number">
+    </div>
+    <div class="choose-plan">
+      <button onclick="getInterest(10, 12)">12month</button>
+      <button onclick="getInterest(12, 24)">24month</button>
+      <button onclick="getInterest(14, 36)">36month</button>
+      <button onclick="getInterest(18, 48)">48month</button>
+    </div>
+    <button onclick="getEmi()" id="final-value">Calculate</button>
+  </div>
+  <script>
+    function getInterest(interestValue, timeTake) {
+      let rate = document.getElementById("rate");
+      let time = document.getElementById("time");
+
+      rate.value = interestValue;
+      time.value = timeTake;
+    }
+
+    function getEmi() {
+      let rate = document.getElementById("rate");
+      let time = document.getElementById("time");
+      let amount = document.getElementById('amount').value;
+      alert(amount * Number(rate.value) / Number(time.value))
+    }
+  </script>
+</body>
+
+</html>
