@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Digit</title>
+</head>
+
+<body>
+  <button onclick="check()">Check</button>
+  <p id="number"></p>
+  <script>
+    function check() {
+      let n = 38;
+      while (n >= 0) {
+        let sum = 0;
+        while (n != 0) {
+          let rem = n % 10;
+          sum = sum + rem;
+          n = Math.floor(n / 10)
+        }
+        n = sum;
+      }
+ document.getElementById("number").innerHTML = n;
+      console.log(n)
+    }
+
+  </script>
+</body>
+
+</html>
