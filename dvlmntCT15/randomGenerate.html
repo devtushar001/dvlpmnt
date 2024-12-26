@@ -53,28 +53,28 @@
 
 
        function generatePassword() {
-         let pass = "";
+         
           let fname = document.getElementById("fname").value;
           let lname = document.getElementById("lname").value;
           let contact = document.getElementById("contact").value;
           let symb = '@#$%/'
-          
+          let pass = "";
           pass += fname[Math.floor(Math.random()*fname.length)];
           pass += fname[Math.floor(Math.random()*fname.length)];
           pass += fname[Math.floor(Math.random()*fname.length)];
           pass += fname[Math.floor(Math.random()*fname.length)];
       
-          pass += lname[Math.floor(Math.random()*fname.length)];
-          pass += lname[Math.floor(Math.random()*fname.length)];
+          pass += lname[Math.floor(Math.random()*lname.length)];
+          pass += lname[Math.floor(Math.random()*lname.length)];
 
-          pass += symb[Math.floor(Math.random()*fname.length)];
+          pass += symb[Math.floor(Math.random()*symb.length)];
 
-          pass += contact[Math.floor(Math.random()*fname.length)];
-          pass += contact[Math.floor(Math.random()*fname.length)];
-          pass += contact[Math.floor(Math.random()*fname.length)];
-          pass += contact[Math.floor(Math.random()*fname.length)];
-          pass += contact[Math.floor(Math.random()*fname.length)];
-          pass += contact[Math.floor(Math.random()*fname.length)];
+          pass += contact[Math.floor(Math.random()*contact.length)];
+          pass += contact[Math.floor(Math.random()*contact.length)];
+          pass += contact[Math.floor(Math.random()*contact.length)];
+          pass += contact[Math.floor(Math.random()*contact.length)];
+          pass += contact[Math.floor(Math.random()*contact.length)];
+          pass += contact[Math.floor(Math.random()*contact.length)];
        
           password.value = pass;
        }
