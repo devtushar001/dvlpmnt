@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Password</title>
+  <style>
+     body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     }
+
+     body .container {
+       background-color: brown;
+       padding: 40px;
+     }
+
+     body .container .box input{
+         width: 540px;
+         height: 35px;
+         padding: 0 20px;
+     }
+
+     body .container .box button {
+       width: 100%;
+       height: 35px;
+       background-color: black;
+       color: #fff;
+       border: none;
+       cursor: pointer;
+     }
+  </style>
+</head>
+<body>
+    <div class="container">
+       <div class="box">
+         <input type="text" placeholder="First name" id="fname"> <br><br>
+         <input type="text" placeholder="Last name" id="lname"> <br><br>
+         <input type="number" placeholder="Contact number" id="contact">
+         <br>
+         <hr>
+         <input type="text" id="password"><br><br>
+         <button onclick="generatePassword()">Generate..</button>
+       </div>
+    </div>
+
+    <script>
+       let password = document.getElementById("password");
+
+
+       function generatePassword() {
+         let pass = "";
+          let fname = document.getElementById("fname").value;
+          let lname = document.getElementById("lname").value;
+          let contact = document.getElementById("contact").value;
+          let symb = '@#$%/'
+          
+          pass += fname[Math.floor(Math.random()*fname.length)];
+          pass += fname[Math.floor(Math.random()*fname.length)];
+          pass += fname[Math.floor(Math.random()*fname.length)];
+          pass += fname[Math.floor(Math.random()*fname.length)];
+      
+          pass += lname[Math.floor(Math.random()*fname.length)];
+          pass += lname[Math.floor(Math.random()*fname.length)];
+
+          pass += symb[Math.floor(Math.random()*fname.length)];
+
+          pass += contact[Math.floor(Math.random()*fname.length)];
+          pass += contact[Math.floor(Math.random()*fname.length)];
+          pass += contact[Math.floor(Math.random()*fname.length)];
+          pass += contact[Math.floor(Math.random()*fname.length)];
+          pass += contact[Math.floor(Math.random()*fname.length)];
+          pass += contact[Math.floor(Math.random()*fname.length)];
+       
+          password.value = pass;
+       }
+    </script>
+</body>
+</html>
