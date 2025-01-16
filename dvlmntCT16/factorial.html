@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial</title>
+</head>
+
+<body>
+  <script>
+    // function factorial(num) {
+
+    // }
+
+    // console.log(factorial(7));
+
+    function factorial(n) {
+      let fact = 1
+      for (let i = 1; i <= n; i++) {
+        fact = i * fact;
+      }
+
+      return fact;
+    }
+    console.log(factorial(5))
+
+    let arr = [1, 2, 4, 11, 74, 12, 74, 34, 14, 21];
+
+    console.log(Math.max(...arr))
+    console.log(...arr);
+
+    let unique = [...new Set(arr)];
+
+    console.log(unique);
+
+    // Set keyword used for unique things
+
+  </script>
+</body>
+
+</html>
