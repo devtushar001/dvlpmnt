@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body,html{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: skyblue;
+        height: 100%;
+        flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+    <input type="text">
+    <div class="container">
+        <div class="stopwatch" id="stopwatch">00:00:00</div>
+        <div class="buttons">
+          <button class="start" onclick="startTimer()">Start</button>
+          <button class="stop" onclick="stopTimer()">Stop</button>
+          <button class="reset" onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+  <script>
+    let timer, seconds = 0;
+    const stopwatch = document.getElementById('stopwatch');
+
+    function updateTime() {
+      stopwatch.textContent = new Date(seconds * 1000).toISOString().substr(11, 8);
+    }
+
+    function startTimer() {
+      timer = setInterval(function() {
+        seconds++;
+        updateTime();
+       }
+       , 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      seconds = 0;
+      updateTime();
+    }
+  </script>
+</body>
+</html>
