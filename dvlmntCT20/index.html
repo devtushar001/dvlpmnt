@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=
   , initial-scale=1.0">
   <title>Number Guessing Game!!</title>
 </head>
+
 <body>
   <div class="containar">
-    
+    <div class="output">
+      <p class="result"></p>
+    </div>
+    <button onclick="nextStapes()">Click for next step</button>
   </div>
+  <script>
+    const stapes = ["1", "2", "3"];
+    let count = 0;
+    function nextStapes() {
+      count++;
+    }
+  </script>
 </body>
+
 </html>

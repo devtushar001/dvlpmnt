@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Link Generator</title>
+  <style>
+    h1,
+    h2,
+    p {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 3px;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 540px;
+      padding: 30px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius: 13px;
+      height: auto;
+    }
+
+    .container .user-input {
+      display: grid;
+      grid-template-columns: 1fr 100px;
+      height: 30px;
+      column-gap: 10px;
+    }
+
+    .container .user-input input {
+      padding-left: 10px;
+      outline-color: rgb(0, 94, 255);
+    }
+
+    .container .user-input button {
+      cursor: pointer;
+      border: 1px solid rgb(0, 94, 255);
+      color: rgb(0, 94, 255);
+      background: transparent;
+      transition: all ease-out 0.3s;
+    }
+
+    .container .user-input button:hover {
+      background: rgb(0, 94, 255);
+      color: #fff;
+    }
+
+    .container .user-output {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .container .user-output img {
+      width: 105px;
+      border-radius: 50%;
+    }
+
+    #user-fetch {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="user-input">
+      <input id="user-name" type="text">
+      <button onclick="getProfile()">Get Profile</button>
+    </div>
+    <div class="user-output">
+      <div id="user-fetch">
+
+      </div>
+      <p id="result"></p>
+    </div>
+    <div class="err-msg"></div>
+  </div>
+  <script>
+
+    function getProfile() {
+
+
+
+      let html = document.getElementById('user-fetch');
+
+      const userId = document.getElementById('user-name').value;
+
+      //  if(document.getElementById('user-name').value = null) {
+      //   alert("Enter username");
+      //   return;
+      //  }
+
+      async function fetchGitHubProfile(id) {
+        const url = `https://api.github.com/users/${id}`;
+
+        try {
+          const response = await fetch(url);
+
+          if (!response.ok) {
+            throw new Error("User not found");
+          }
+          const data = await response.json();
+
+          html.innerHTML += `
+             <img src="${data.avatar_url}" alt="">
+        <div>
+          <h1>${data.name}</h1>
+        </div>
+        <div class="bio">
+          <h2>${data.bio}</h2>
+        </div>
+        <div class=""><strong>Followers :</strong> <span>${data.followers}</span></div>
+        <div class=""><strong>Following :</strong> <span>${data.following}</span></div>
+        <div class=""><strong>Repositories :</strong> <span>${data.public_repos}</span></div>
+          `;
+        } catch (error) {
+          alert("error")
+        }
+      }
+
+      fetchGitHubProfile(userId);
+
+      document.getElementById('result').innerHTML = ` <a target="_blank" href="https://github.com/${userId}">View profile</a>`;
+    }
+  </script>
+</body>
+
+</html>
