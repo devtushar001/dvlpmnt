@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Generater</title>
+  <style>
+    button {
+      height: 35px;
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+  <div
+    style="display: flex; height: 100vh; align-items: center; justify-content: center; flex-direction: column; background-color: rgb(189, 224, 255);"
+    class="container">
+    <div class="box"
+      style="width: 540px; padding: 30px; height: auto; background-color: aliceblue; display: flex; flex-direction: column; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+      <textarea id="text" style="height: 210px;" name="" id=""></textarea>
+      <button onclick="generateVoice()" style="margin-top: 30px; cursor: pointer; height: 35px;">Generate Voice</button>
+    </div>
+  </div>
+
+  <script>
+    const generateVoice = () => {
+      let text = document.getElementById('text').value;
+
+      if (text.trim() === '') {
+        text = 'Please enter some text.'
+      }
+
+      const ultran = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(ultran);
+    }
+
+  </script>
+</body>
+
+</html>
