@@ -12,6 +12,9 @@
       margin: 0;
       padding: 0;
       margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     body {
@@ -116,13 +119,13 @@
           }
           const data = await response.json();
 
-          html.innerHTML += `
+          html.innerHTML = `
              <img src="${data.avatar_url}" alt="">
         <div>
           <h1>${data.name}</h1>
         </div>
         <div class="bio">
-          <h2>${data.bio}</h2>
+          <p>${data.bio}</p>
         </div>
         <div class=""><strong>Followers :</strong> <span>${data.followers}</span></div>
         <div class=""><strong>Following :</strong> <span>${data.following}</span></div>

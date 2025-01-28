@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>change color</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <button onclick="changeColor('blue')">Blue</button>
+    <button onclick="changeColor('green')">Green</button>
+    <button onclick="changeColor('yellow')">Yellow</button>
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('brown')">Brown</button>
+    <button onclick="changeColor('pink')">Pink</button>
+  </div>
+
+
+  <script>
+    function changeColor(color) {
+      document.getElementById('container').style.backgroundColor = color;
+      console.log(color)
+    }
+  </script>
+</body>
+
+</html>
