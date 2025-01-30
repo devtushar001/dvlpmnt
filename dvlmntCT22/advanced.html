@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fucntion</title>
+</head>
+
+<body>
+  <script>
+    const radius = [1, 2, 3, 4, 5];
+
+    const area = function (radius) {
+      return Math.PI * radius * radius;
+    };
+
+    const diameter = function (radius) {
+      return 2 * radius;
+    }
+
+    const calculate = function (radius, logic) {
+      const output = []
+      for (let i = 0; i < radius.length; i++) {
+        output.push(logic(radius[i]))
+      }
+      return output;
+    }
+
+    console.log(calculate(radius, area));
+    console.log(calculate(radius, diameter))
+
+
+  </script>
+</body>
+
+</html>

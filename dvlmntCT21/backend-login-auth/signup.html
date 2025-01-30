@@ -3,14 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
+  <title>Document</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body form {
+      width: 450px;
+      /* height: 320px; */
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 20px;
+    }
+
+    body form input {
+      width: 80%;
+      padding: 0 12px;
+      height: 25px;
+      border-radius: 4px;
+      outline-color: rgb(0, 84, 209);
+      border: 1px solid rgb(0, 84, 209);
+    }
+
+    body form button {
+      height: 25px;
+      width: 85%;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <div class="signup-container">
-    <input placeholder="Name" type="text" name="" id="">
-    <input placeholder="Email" type="email" name="" id="">
-    <input placeholder="password" type="text" name="" id="">
-    <a href="/dvlmntCT21/backend-login-auth/login.html">Allready have an account</a>
-  </div>
+  <h2 style="color: gray; font-family: Arial">Sign Up</h2>
+  <form name="submit-to-google-sheet">
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="text" name="Username" placeholder="Usrname" required> 
+    <input type="password" name="password" placeholder="password" required>
+    <button>Send</button>
+  </form>
+  <a href="../backend-login-auth/login.html">Allready have an account</a>
+  <a href="../backend-login-auth/index.html">Go to home</a>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwaXrFebGFE7n4TOqoftx3kI8q6uR3Z54Azft0f_oDME-nY-FRNH_i2bywILKcRpsXjFw/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>
